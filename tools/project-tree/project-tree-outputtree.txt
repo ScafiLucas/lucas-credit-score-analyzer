@@ -1,0 +1,60 @@
+├── .env
+├── .gitignore
+├── Dockerfile
+├── README.md
+├── app/
+│   ├── api/
+│   │   └── v1/
+│   │       ├── __init__.py
+│   │       └── endpoints/
+│   │           └── credit_score.py
+│   ├── core/
+│   │   ├── config.py
+│   │   └── queue.py
+│   ├── db/
+│   │   ├── __init__.py
+│   │   ├── database.py
+│   │   ├── enums/
+│   │   │   └── enums.py
+│   │   ├── enums.py
+│   │   └── models/
+│   │       ├── __init__.py
+│   │       └── credit_score_db.py
+│   ├── main.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── input/
+│   │   │   └── credit_score_input.py
+│   │   ├── output/
+│   │   │   └── credit_score_output.py
+│   │   └── responses/
+│   │       └── upload_response.py
+│   ├── repositories/
+│   │   ├── __init__.py
+│   │   ├── credit_score_repository.py
+│   │   └── interfaces/
+│   │       └── base_repository.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── credit_score_service.py
+│   │   └── status_service.py
+│   └── worker/
+│       └── credit_score_worker.py
+├── docker-compose.yml
+├── external-tools/
+│   ├── project-tree/
+│   │   ├── get-project-tree.py
+│   │   └── project-tree-outputtree.txt
+│   └── tools.txt
+├── pyproject.toml
+├── requirements.txt
+└── tests/
+    ├── __init__.py
+    ├── component/
+    │   └── test_upload_endpoint.py
+    ├── integration/
+    │   └── test_credit_score_repository.py
+    └── unit/
+        ├── test_credit_score_service.py
+        ├── test_status_service.py
+        └── test_worker.py
