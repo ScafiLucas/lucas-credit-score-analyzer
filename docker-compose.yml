@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7
+    restart: always
+    ports:
+      - "6379:6379"
+
+  app:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - .:/app
+    environment:
+      - DATABASE_URL=postgresql+psycopg2://postgres:2404@172.17.0.1:5432/credit_score_db
+      - REDIS_URL=redis://redis:6379
+      - QUEUE_CHANNEL=credit_score_jobs
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+volumes:
+  pgdata:

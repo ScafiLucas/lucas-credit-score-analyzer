@@ -4,6 +4,7 @@
 ├── README.md
 ├── app/
 │   ├── api/
+│   │   ├── routes.py
 │   │   └── v1/
 │   │       ├── __init__.py
 │   │       └── endpoints/
@@ -20,8 +21,16 @@
 │   │   └── models/
 │   │       ├── __init__.py
 │   │       └── credit_score_db.py
+│   ├── interfaces/
+│   │   └── services/
+│   │       └── credit_score_service_interface.py
 │   ├── main.py
-│   ├── models/
+│   ├── repositories/
+│   │   ├── __init__.py
+│   │   ├── credit_score_repository.py
+│   │   └── interfaces/
+│   │       └── base_repository.py
+│   ├── schemas/
 │   │   ├── __init__.py
 │   │   ├── input/
 │   │   │   └── credit_score_input.py
@@ -29,11 +38,6 @@
 │   │   │   └── credit_score_output.py
 │   │   └── responses/
 │   │       └── upload_response.py
-│   ├── repositories/
-│   │   ├── __init__.py
-│   │   ├── credit_score_repository.py
-│   │   └── interfaces/
-│   │       └── base_repository.py
 │   ├── services/
 │   │   ├── __init__.py
 │   │   ├── credit_score_service.py
@@ -41,20 +45,19 @@
 │   └── worker/
 │       └── credit_score_worker.py
 ├── docker-compose.yml
-├── external-tools/
-│   ├── project-tree/
-│   │   ├── get-project-tree.py
-│   │   └── project-tree-outputtree.txt
-│   └── tools.txt
 ├── pyproject.toml
 ├── requirements.txt
-└── tests/
-    ├── __init__.py
-    ├── component/
-    │   └── test_upload_endpoint.py
-    ├── integration/
-    │   └── test_credit_score_repository.py
-    └── unit/
-        ├── test_credit_score_service.py
-        ├── test_status_service.py
-        └── test_worker.py
+├── tests/
+│   ├── __init__.py
+│   ├── component/
+│   │   └── test_upload_endpoint.py
+│   ├── integration/
+│   │   └── test_credit_score_repository.py
+│   └── unit/
+│       ├── test_credit_score_service.py
+│       ├── test_status_service.py
+│       └── test_worker.py
+└── tools/
+    └── project-tree/
+        ├── get-project-tree.py
+        └── project-tree-outputtree.txt
